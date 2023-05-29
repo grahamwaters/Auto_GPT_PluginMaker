@@ -1,0 +1,56 @@
+openapi: 3.0.1
+info:
+  title: Alexandria Library Plugin
+  description: A plugin that performs semantic search across multiple historical and literary databases and websites.
+  version: 'v1'
+servers:
+  - url: http://localhost:3333
+paths:
+  /search:
+    post:
+      operationId: performSearch
+      summary: Perform a semantic search
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SearchRequest'
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SearchResponse'
+components:
+  schemas:
+    SearchRequest:
+      type: object
+      properties:
+        query:
+          type: string
+          description: The search term or phrase.
+        source:
+          type: string
+          description: The source to search. Options are 'Gutenberg', 'InternetArchive', 'DocsTeach', 'SweetSearch', 'HistoryPin', 'ArchivesGov', 'FordhamSourcebooks', 'Wikipedia', 'All'. Default is 'All'.
+    SearchResponse:
+      type: object
+      properties:
+        results:
+          type: array
+          items:
+            type: object
+            properties:
+              title:
+                type: string
+                description: The title of the document.
+              author:
+                type: string
+                description: The author of the document (if applicable).
+              url:
+                type: string
+                description: The URL for the document.
+              snippet:
+                type: string
+                description: A snippet of text from the document (if available).
+          description: An array of search results.

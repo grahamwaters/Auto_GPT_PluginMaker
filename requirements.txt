@@ -1,0 +1,6 @@
+os
+re
+requests
+requests-oauthlib
+openai
+fastapi

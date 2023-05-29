@@ -1,0 +1,17 @@
+{
+    "schema_version": "v1",
+    "name_for_human": "Alexandria Library Plugin",
+    "name_for_model": "alexandriaLibrary",
+    "description_for_human": "Plugin for performing semantic search across multiple historical and literary databases and websites.",
+    "description_for_model": "Plugin for performing semantic search across multiple historical and literary databases and websites.",
+    "auth": {
+        "type": "none"
+    },
+    "api": {
+        "type": "openapi",
+        "url": "http://localhost:3333/openapi.yaml"
+    },
+    "logo_url": "http://localhost:3333/logo.png",
+    "contact_email": "support@alexandrialibrary.com",
+    "legal_info_url": "http://www.alexandrialibrary.com/legal"
+}
